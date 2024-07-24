@@ -26,14 +26,14 @@ public class CarController {
 
     //Lokales Handling
     @ExceptionHandler(IllegalArgumentException.class)
-    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
     public String IllegalArgumentExceptionHandler(IllegalArgumentException ex) {
 
         return ex.getMessage();
     }
 
     @ExceptionHandler(NoSuchElementException.class)
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
     public String NoSuchElementExceptionHandler(NoSuchElementException ex) {
 
         return ex.getMessage();
